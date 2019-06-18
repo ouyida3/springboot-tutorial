@@ -11,14 +11,17 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 //import cn.hutool.log.Log;// 使用@Slf4j
 //import cn.hutool.log.LogFactory;// 使用@Slf4j
-//import lombok.extern.slf4j.Slf4j;// 不用这个，不知道是啥，使用@Slf4j
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @see <a>https://blog.csdn.net/moshowgame/article/details/80275084</a>
+ * @see <a>http://www.ruanyifeng.com/blog/2017/05/websocket.html</a>
+ *
+ * 支持的浏览器：
+ * @see <a>https://caniuse.com/#search=websockets<a/>
  */
 @ServerEndpoint("/websocket/{sid}")
 @Component

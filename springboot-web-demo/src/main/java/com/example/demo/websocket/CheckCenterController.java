@@ -1,11 +1,9 @@
 package com.example.demo.websocket;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 
@@ -14,20 +12,11 @@ import java.io.IOException;
 public class CheckCenterController {
 
     /**
-     * 页面请求。
-     * 目前用不到。
-     */
-    @GetMapping("/socket/{cid}")
-    public ModelAndView socket(@PathVariable String cid) {
-        ModelAndView mav = new ModelAndView("/socket");
-        mav.addObject("cid", cid);
-        return mav;
-    }
-
-    /**
      * 推送数据接口。
      *
-     * 样例：http://localhost:8080/checkcenter/socket/push/20?message=test
+     * 样例：
+     * 推送单个电视：http://localhost:8080/checkcenter/socket/push/20?message=notice
+     * 推送全部电视：http://localhost:8080/checkcenter/socket/push/all?message=notice
      *
      * @param cid 客户端的id
      * @param message 推送的消息内容
