@@ -14,7 +14,8 @@ import java.io.IOException;
 public class CheckCenterController {
 
     /**
-     * 页面请求
+     * 页面请求。
+     * 目前用不到。
      */
     @GetMapping("/socket/{cid}")
     public ModelAndView socket(@PathVariable String cid) {
@@ -30,7 +31,7 @@ public class CheckCenterController {
      *
      * @param cid 客户端的id
      * @param message 推送的消息内容
-     * @return
+     * @return json字符串，包含客户端的id与消息内容或异常内容
      */
     @ResponseBody
     @RequestMapping("/socket/push/{cid}")
@@ -39,8 +40,8 @@ public class CheckCenterController {
             WebSocketServer.sendInfo(message, cid);
         } catch (IOException e) {
             e.printStackTrace();
-            return cid + "#" + e.getMessage();
+            return "{id:" + cid + ", error:" + e.getMessage() + "}";
         }
-        return "id:" + cid;
+        return "{id:" + cid + ", message:" + message + "}";
     }
 }
