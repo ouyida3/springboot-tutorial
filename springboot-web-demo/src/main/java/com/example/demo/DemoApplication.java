@@ -42,7 +42,12 @@ public class DemoApplication {
         // 联系方式，点击name打开邮箱
         Contact contact = new Contact("danni", "", "252283424@qq.com");
         // title为大标题；description为小说明
-        return new ApiInfoBuilder().title("Api Documentation Title").description("Api Documentation Description").contact(contact).version("1.0").build();
+        return new ApiInfoBuilder()
+                .title("Api Documentation Title")
+                .description("Api Documentation Description")
+                .contact(contact)
+                .version("1.0")
+                .build();
     }
 
 }
