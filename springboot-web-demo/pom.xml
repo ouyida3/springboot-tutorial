@@ -79,6 +79,8 @@
             <artifactId>spring-batch-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- 必须有，否则需要配置url -->
+        <!--Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.-->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>

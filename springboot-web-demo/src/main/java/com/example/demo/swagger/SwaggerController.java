@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * The base url is the root of where all the swagger resources are served.
  * For e.g. if the api is available at http://example.org/api/v2/api-docs then the base url is
  * http://example.org/api/. Please enter the location manually:
+ * 升级版本到2.9.2解决。
  *
  * 界面：
  * http://localhost:8080/swagger-ui.html
