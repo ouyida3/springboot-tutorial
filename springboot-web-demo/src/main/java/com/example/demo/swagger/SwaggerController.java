@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
  * The base url is the root of where all the swagger resources are served.
  * For e.g. if the api is available at http://example.org/api/v2/api-docs then the base url is
  * http://example.org/api/. Please enter the location manually:
- * 升级版本到2.9.2解决。
+ * 升级版本到2.7.0（旧界面）或2.9.2（新界面）解决。
+ * 不使用2.6.1版本（原因未查明）
  *
  * 界面：
  * http://localhost:8080/swagger-ui.html
@@ -43,8 +44,11 @@ public class SwaggerController {
 
     @PostMapping(value = "/post")
     @ApiOperation(value = "post操作", notes = "POST")
-    @ApiImplicitParams({@ApiImplicitParam(name = "req", value = "", required = true, dataType = "JSONObject")})
-    public void post(@RequestBody JSONObject req) {
+    @ApiImplicitParams({@ApiImplicitParam(
+            name = "req", value = "请求入参对象", required = true,
+            dataType = "SwaggerReq"// @ApiImplicitParam里必须指定，否则使用默认的String；如不使用ApiImplicitParam，则自动匹配入参类
+    )})
+    public void post(@RequestBody SwaggerReq req) {
 
     }
 

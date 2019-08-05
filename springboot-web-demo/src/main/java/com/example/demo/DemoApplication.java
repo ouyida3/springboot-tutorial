@@ -26,28 +26,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @Bean
-    public Docket createRestApi() {
-        ParameterBuilder tokenPar = new ParameterBuilder();
-        List<Parameter> pars = new ArrayList<>();
-        tokenPar.name("token").description("Token").modelRef(new ModelRef("string")).parameterType("header")
-                .required(false).build();
-        pars.add(tokenPar.build());
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.swagger")).paths(PathSelectors.any())
-                .build().globalOperationParameters(pars);
-    }
-
-    private ApiInfo apiInfo() {
-        // 联系方式，点击name打开邮箱
-        Contact contact = new Contact("danni", "", "252283424@qq.com");
-        // title为大标题；description为小说明
-        return new ApiInfoBuilder()
-                .title("Api Documentation Title")
-                .description("Api Documentation Description")
-                .contact(contact)
-                .version("1.0")
-                .build();
-    }
-
 }
