@@ -17,8 +17,8 @@
     <properties>
         <!-- 依赖库的版本定义 -->
         <jdk.version>1.8</jdk.version>
-        <swagger.version>2.7.0</swagger.version>
-        <!--<swagger.version>2.9.2</swagger.version>-->
+        <!--<swagger.version>2.7.0</swagger.version>-->
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>

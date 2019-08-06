@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * http://localhost:8080/v2/api-docs
  */
 @RestController
-@Api(value = "Swagger控制器", tags = {"Swagger接口"})
+@Api(value = "Swagger控制器", tags = {"SwaggerController"}, description = "Swagger接口")// 显示为：SwaggerController:Swagger接口，value不显示
 public class SwaggerController {
 
     @GetMapping(value = "/get")
