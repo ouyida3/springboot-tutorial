@@ -23,9 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
  * http://localhost:8080/v2/api-docs
  */
 @RestController
-@Api(value = "Swagger控制器", tags = {"SwaggerController"}, description = "Swagger接口")// 显示为：SwaggerController:Swagger接口，value不显示
+@Api(value = "Swagger控制器", tags = "SwaggerController", description = "Swagger接口", position = 1)// 显示为：SwaggerController:Swagger接口，value不显示
+//@Api(value = "Swagger控制器", tags = {"1","SwaggerController"}, description = "Swagger接口", position = 1)// 显示两个，一个1，一个SwaggerController
 public class SwaggerController {
 
+    /**
+     * Get不能用@RequestBody，否则：
+     * org.springframework.http.converter.HttpMessageNotReadableException:
+     * Required request body is missing
+     */
     @GetMapping(value = "/get")
     @ApiOperation(value = "get操作", notes = "GET")
     @ApiImplicitParams({
