@@ -33,7 +33,7 @@ public class SwaggerController {
      * Required request body is missing
      */
     @GetMapping(value = "/get")
-    @ApiOperation(value = "get操作", notes = "GET")
+    @ApiOperation(value = "get操作", notes = "GET", position = 1)// position已作废，因此不起作用
     @ApiImplicitParams({
             @ApiImplicitParam(
                     name = "src",
@@ -49,7 +49,7 @@ public class SwaggerController {
     }
 
     @PostMapping(value = "/post")
-    @ApiOperation(value = "post操作", notes = "POST")
+    @ApiOperation(value = "post操作", notes = "POST", position = 2)
     @ApiImplicitParams({@ApiImplicitParam(
             name = "req", value = "请求入参对象", required = true,
             dataType = "SwaggerReq"// @ApiImplicitParam里必须指定，否则使用默认的String；如不使用ApiImplicitParam，则自动匹配入参类
